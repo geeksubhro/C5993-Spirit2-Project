@@ -1,0 +1,415 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>Chunibo: Food Delivery App</title>
+</head>
+<body>
+
+    <header class="header">
+        <img src="../images/logo/logo1.jpg" width="100" alt="Logo">
+        <div class="header-title">Chunibyo</div>
+        <div class="header-links">
+            <a href="#" class="header-link">Add Restaurant</a>
+            <a href="/Abir/Login2.html" class="header-link">Sign In</a>
+            <a href="/Abir/SignUp.html" class="header-link">Sign Up</a>
+        </div>
+        <div class="menu-btn" id="menuBtn">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+<!-- Header Menu -->
+    <div class="menu" id="menu">
+        <div class="menu-close-btn" id="closeBtn">&times;<span>Close</span></div>
+        <a href="/Abir/Login2.html" class="menu-link" onclick="closeMenu()">Sign In</a>
+        <a href="/Abir/SignUp.html" class="menu-link" onclick="closeMenu()">Sign Up</a>
+        <a href="#" class="menu-link" onclick="closeMenu()">Add Restaurant</a>
+        <a href="#footer" class="menu-link" onclick="closeMenu()">About</a>
+    </div>
+    
+<!-- Restaurent Photos -->
+
+
+ <table>
+    <tr>
+        <td id="cell1" rowspan="2" ></td>
+        <td id="cell2"></td>
+        <td id="cell3" rowspan="2"></td>
+    </tr>
+    <tr>
+        <td id="cell4"></td>
+    </tr>
+</table>
+
+
+    <!-- Texts -->
+    <div class="random-text">
+        <p>Arsenal Kolkata: the real taste of Kolkata Biriyani!</p>
+        <p >Here is our Menu: </p>
+    </div>
+
+
+<!-- Menu Section -->
+
+
+<div class="food-delivery-container">
+    <div class="categories">
+        <h2>Categories</h2>
+        <ul>
+            <li id="vegCategory">Veg
+                <ul>
+                    <li>Panner</li>
+                    <li>Tofu</li>
+                </ul>
+            </li>
+            <li id="nonVegCategory">Non Veg
+                <ul>
+                    <li>Chicken</li>
+                    <li>Mutton</li>
+                    <li>Egg</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="menu-items-container">
+        <div class="menu-items">
+            <!-- Veg: Paneer -->
+            <div class="food-item" onmouseover="highlightCategory('vegCategory')" onmouseout="unhighlightCategory()" onclick="toggleQuantity('paneer')">
+                <div class="food-image">
+                    <img src="arsalanImages/food/paneer.jpg" alt="Paneer">
+                </div>
+                <div class="food-details">
+                    <div class="food-name">Paneer</div>
+                    <div class="food-description">Fresh cottage cheese for a delightful vegetarian experience.</div>
+
+                    <!-- Quantity Div -->
+                    <div class="quantity-container" id="quantity-paneer" style="display: none;">
+                        <button onclick="changeQuantity('paneer', -1)" class="quantity-buttons"><i class="material-icons">remove</i></button>
+                        <div class="quantity" id="quantity-value-paneer">0</div>
+                        <button onclick="changeQuantity('paneer', 1)" class="quantity-buttons"><i class="material-icons">add</i></button>
+                    </div>
+                </div>
+                <div class="food-review">
+                    <div class="review-rating">4.9</div>
+                    <div class="review-count">(98 Reviews)</div>
+                </div>
+            </div>
+
+            <!-- Non Veg: Chicken -->
+            <div class="food-item" onmouseover="highlightCategory('nonVegCategory')" onmouseout="unhighlightCategory()" onclick="toggleQuantity('chicken')">
+                <div class="food-image">
+                    <img src="arsalanImages/food/chicken.png" alt="Chicken">
+                </div>
+                <div class="food-details">
+                    <div class="food-name">Chicken</div>
+                    <div class="food-description">Juicy and succulent chicken prepared with secret spices.</div>
+
+                    <!-- Quantity Div -->
+                    <div class="quantity-container" id="quantity-chicken" style="display: none;">
+                        <button onclick="changeQuantity('chicken', -1)" class="quantity-buttons"><i class="material-icons">remove</i></button>
+                        <div class="quantity" id="quantity-value-chicken">0</div>
+                        <button onclick="changeQuantity('chicken', 1)" class="quantity-buttons"><i class="material-icons">add</i></button>
+                    </div>
+                </div>
+                <div class="food-review">
+                    <div class="review-rating">4.8</div>
+                    <div class="review-count">(112 Reviews)</div>
+                </div>
+            </div>
+
+
+            <!-- Veg: Tofu -->
+            <div class="food-item" onmouseover="highlightCategory('vegCategory')" onmouseout="unhighlightCategory()" onclick="toggleQuantity('tofu')">
+                <div class="food-image">
+                    <img src="arsalanImages/food/tofu.jpeg" alt="Tofu">
+                </div>
+                <div class="food-details">
+                    <div class="food-name">Tofu</div>
+                    <div class="food-description">Soybean curd with a versatile and mild flavor.</div>
+
+                    <!-- Quantity Div -->
+                    <div class="quantity-container" id="quantity-tofu" style="display: none;">
+                        <button onclick="changeQuantity('tofu', -1)"><i class="material-icons">remove</i></button>
+                        <div class="quantity" id="quantity-value-tofu">0</div>
+                        <button onclick="changeQuantity('tofu', 1)"><i class="material-icons">add</i></button>
+                    </div>
+                </div>
+                <div class="food-review">
+                    <div class="review-rating">4.7</div>
+                    <div class="review-count">(76 Reviews)</div>
+                </div>
+            </div>
+
+            <!-- Non Veg: Chicken -->
+            <div class="food-item" onmouseover="highlightCategory('nonVegCategory')" onmouseout="unhighlightCategory()" onclick="toggleQuantity('chicken')">
+                <div class="food-image">
+                    <img src="arsalanImages/food/chicken.png" alt="Chicken">
+                </div>
+                <div class="food-details">
+                    <div class="food-name">Chicken</div>
+                    <div class="food-description">Juicy and succulent chicken prepared with secret spices.</div>
+
+                    <!-- Quantity Div -->
+                    <div class="quantity-container" id="quantity-chicken" style="display: none;">
+                        <button onclick="changeQuantity('chicken', -1)"><i class="material-icons">remove</i></button>
+                        <div class="quantity" id="quantity-value-chicken">0</div>
+                        <button onclick="changeQuantity('chicken', 1)"><i class="material-icons">add</i></button>
+                    </div>
+                </div>
+                <div class="food-review">
+                    <div class="review-rating">4.8</div>
+                    <div class="review-count">(112 Reviews)</div>
+                </div>
+            </div>
+
+            <!-- Non Veg: Mutton -->
+            <div class="food-item" onmouseover="highlightCategory('nonVegCategory')" onmouseout="unhighlightCategory()" onclick="toggleQuantity('mutton')">
+                <div class="food-image">
+                    <img src="arsalanImages/food/mutton.jpeg" alt="Mutton">
+                </div>
+                <div class="food-details">
+                    <div class="food-name">Mutton</div>
+                    <div class="food-description">Tender mutton pieces cooked to perfection with aromatic spices.</div>
+
+                    <!-- Quantity Div -->
+                    <div class="quantity-container" id="quantity-mutton" style="display: none;">
+                        <button onclick="changeQuantity('mutton', -1)"><i class="material-icons">remove</i></button>
+                        <div class="quantity" id="quantity-value-mutton">0</div>
+                        <button onclick="changeQuantity('mutton', 1)"><i class="material-icons">add</i></button>
+                    </div>
+                </div>
+                <div class="food-review">
+                    <div class="review-rating">4.6</div>
+                    <div class="review-count">(88 Reviews)</div>
+                </div>
+            </div>
+
+            <!-- Egg: Egg Biryani -->
+            <div class="food-item" onmouseover="highlightCategory('nonVegCategory')" onmouseout="unhighlightCategory()" onclick="toggleQuantity('eggBiryani')">
+                <div class="food-image">
+                    <img src="arsalanImages/food/egg_biryani.jpg" alt="Egg Biryani">
+                </div>
+                <div class="food-details">
+                    <div class="food-name">Egg Biryani</div>
+                    <div class="food-description">Flavorful biryani with boiled eggs and aromatic spices.</div>
+
+                    <!-- Quantity Div -->
+                    <div class="quantity-container" id="quantity-eggBiryani" style="display: none;">
+                        <button onclick="changeQuantity('eggBiryani', -1)"><i class="material-icons">remove</i></button>
+                        <div class="quantity" id="quantity-value-eggBiryani">0</div>
+                        <button onclick="changeQuantity('eggBiryani', 1)"><i class="material-icons">add</i></button>
+                    </div>
+                </div>
+                <div class="food-review">
+                    <div class="review-rating">4.5</div>
+                    <div class="review-count">(95 Reviews)</div>
+                </div>
+            </div>
+
+            <!-- Veg: Spinach and Mushroom Curry -->
+            <div class="food-item" onmouseover="highlightCategory('vegCategory')" onmouseout="unhighlightCategory()" onclick="toggleQuantity('spinachMushroomCurry')">
+                <div class="food-image">
+                    <img src="arsalanImages/food/spinach_and_mushroom_curry.jpg" alt="Spinach and Mushroom Curry">
+                </div>
+                <div class="food-details">
+                    <div class="food-name">Spinach and Mushroom Curry</div>
+                    <div class="food-description">A delicious vegetarian curry with fresh spinach and mushrooms.</div>
+
+                    <!-- Quantity Div -->
+                    <div class="quantity-container" id="quantity-spinachMushroomCurry" style="display: none;">
+                        <button onclick="changeQuantity('spinachMushroomCurry', -1)"><i class="material-icons">remove</i></button>
+                        <div class="quantity" id="quantity-value-spinachMushroomCurry">0</div>
+                        <button onclick="changeQuantity('spinachMushroomCurry', 1)"><i class="material-icons">add</i></button>
+                    </div>
+                </div>
+                <div class="food-review">
+                    <div class="review-rating">4.8</div>
+                    <div class="review-count">(82 Reviews)</div>
+                </div>
+            </div>
+
+            <!-- Veg: Veggie Pizza -->
+            <div class="food-item" onmouseover="highlightCategory('vegCategory')" onmouseout="unhighlightCategory()" onclick="toggleQuantity('veggiePizza')">
+                <div class="food-image">
+                    <img src="arsalanImages/food/veggie-pizza.jpg" alt="Veggie Pizza">
+                </div>
+                <div class="food-details">
+                    <div class="food-name">Veggie Pizza</div>
+                    <div class="food-description">A classic vegetarian pizza loaded with fresh veggies.</div>
+
+                    <!-- Quantity Div -->
+                    <div class="quantity-container" id="quantity-veggiePizza" style="display: none;">
+                        <button onclick="changeQuantity('veggiePizza', -1)"><i class="material-icons">remove</i></button>
+                        <div class="quantity" id="quantity-value-veggiePizza">0</div>
+                        <button onclick="changeQuantity('veggiePizza', 1)"><i class="material-icons">add</i></button>
+                    </div>
+                </div>
+                <div class="food-review">
+                    <div class="review-rating">4.7</div>
+                    <div class="review-count">(94 Reviews)</div>
+                </div>
+            </div>
+
+            <!-- Non Veg: Fish Curry -->
+            <div class="food-item" onmouseover="highlightCategory('nonVegCategory')" onmouseout="unhighlightCategory()" onclick="toggleQuantity('fishCurry')">
+                <div class="food-image">
+                    <img src="arsalanImages/food/fish_curry.jpeg" alt="Fish Curry">
+                </div>
+                <div class="food-details">
+                    <div class="food-name">Fish Curry</div>
+                    <div class="food-description">Spicy and tangy fish curry made with fresh catch of the day.</div>
+
+                    <!-- Quantity Div -->
+                    <div class="quantity-container" id="quantity-fishCurry" style="display: none;">
+                        <button onclick="changeQuantity('fishCurry', -1)"><i class="material-icons">remove</i></button>
+                        <div class="quantity" id="quantity-value-fishCurry">0</div>
+                        <button onclick="changeQuantity('fishCurry', 1)"><i class="material-icons">add</i></button>
+                    </div>
+                </div>
+                <div class="food-review">
+                    <div class="review-rating">4.9</div>
+                    <div class="review-count">(105 Reviews)</div>
+                </div>
+            </div>
+
+            <!-- Non Veg: Chicken Chap -->
+            <div class="food-item" onmouseover="highlightCategory('nonVegCategory')" onmouseout="unhighlightCategory()" onclick="toggleQuantity('chickenChap')">
+                <div class="food-image">
+                    <img src="arsalanImages/food/chicken_chaap.jpg" alt="Chicken Chap">
+                </div>
+                <div class="food-details">
+                    <div class="food-name">Chicken Chap</div>
+                    <div class="food-description">Flavorful Chicken dish with a secret mix of spices and butter.</div>
+
+                    <!-- Quantity Div -->
+                    <div class="quantity-container" id="quantity-chickenChap" style="display: none;">
+                        <button onclick="changeQuantity('chickenChap', -1)"><i class="material-icons">remove</i></button>
+                        <div class="quantity" id="quantity-value-chickenChap">0</div>
+                        <button onclick="changeQuantity('chickenChap', 1)"><i class="material-icons">add</i></button>
+                    </div>
+                </div>
+                <div class="food-review">
+                    <div class="review-rating">4.6</div>
+                    <div class="review-count">(79 Reviews)</div>
+                </div>
+            </div>
+
+            <!-- Egg: Egg Roll -->
+            <div class="food-item" onmouseover="highlightCategory('nonVegCategory')" onmouseout="unhighlightCategory()" onclick="toggleQuantity('eggRoll')">
+                <div class="food-image">
+                    <img src="arsalanImages/food/egg_roll.jpg" alt="Egg Roll">
+                </div>
+                <div class="food-details">
+                    <div class="food-name">Egg Roll</div>
+                    <div class="food-description">Flavorful roll stuffed with spicy scrambled eggs.</div>
+
+                    <!-- Quantity Div -->
+                    <div class="quantity-container" id="quantity-eggRoll" style="display: none;">
+                        <button onclick="changeQuantity('eggRoll', -1)"><i class="material-icons">remove</i></button>
+                        <div class="quantity" id="quantity-value-eggRoll">0</div>
+                        <button onclick="changeQuantity('eggRoll', 1)"><i class="material-icons">add</i></button>
+                    </div>
+                </div>
+                <div class="food-review">
+                    <div class="review-rating">4.7</div>
+                    <div class="review-count">(88 Reviews)</div>
+                </div>
+            </div>
+
+            <!-- Veg: Lentil Soup -->
+            <div class="food-item" onmouseover="highlightCategory('vegCategory')" onmouseout="unhighlightCategory()" onclick="toggleQuantity('lentilSoup')">
+                <div class="food-image">
+                    <img src="arsalanImages/food/lentil_soup.jpg" alt="Lentil Soup">
+                </div>
+                <div class="food-details">
+                    <div class="food-name">Lentil Soup</div>
+                    <div class="food-description">Hearty and nutritious lentil soup with vegetables.</div>
+
+                    <!-- Quantity Div -->
+                    <div class="quantity-container" id="quantity-lentilSoup" style="display: none;">
+                        <button onclick="changeQuantity('lentilSoup', -1)"><i class="material-icons">remove</i></button>
+                        <div class="quantity" id="quantity-value-lentilSoup">0</div>
+                        <button onclick="changeQuantity('lentilSoup', 1)"><i class="material-icons">add</i></button>
+                    </div>
+                </div>
+                <div class="food-review">
+                    <div class="review-rating">4.5</div>
+                    <div class="review-count">(65 Reviews)</div>
+                </div>
+            </div>
+
+            <!-- Veg: Tomato Basil Soup -->
+            <div class="food-item" onmouseover="highlightCategory('vegCategory')" onmouseout="unhighlightCategory()" onclick="toggleQuantity('tomatoBasilSoup')">
+                <div class="food-image">
+                    <img src="arsalanImages/food/tomato_basil_soup.jpeg" alt="Tomato Basil Soup">
+                </div>
+                <div class="food-details">
+                    <div class="food-name">Tomato Basil Soup</div>
+                    <div class="food-description">Classic tomato soup infused with fresh basil flavor.</div>
+
+                    <!-- Quantity Div -->
+                    <div class="quantity-container" id="quantity-tomatoBasilSoup" style="display: none;">
+                        <button onclick="changeQuantity('tomatoBasilSoup', -1)"><i class="material-icons">remove</i></button>
+                        <div class="quantity" id="quantity-value-tomatoBasilSoup">0</div>
+                        <button onclick="changeQuantity('tomatoBasilSoup', 1)"><i class="material-icons">add</i></button>
+                    </div>
+                </div>
+                <div class="food-review">
+                    <div class="review-rating">4.6</div>
+                    <div class="review-count">(72 Reviews)</div>
+                </div>
+            </div>
+
+            <!-- Non Veg: Chicken Noodle Soup -->
+            <div class="food-item" onmouseover="highlightCategory('nonVegCategory')" onmouseout="unhighlightCategory()" onclick="toggleQuantity('chickenNoodleSoup')">
+                <div class="food-image">
+                    <img src="arsalanImages/food/chicken_noodle_soup.jpg" alt="Chicken Noodle Soup">
+                </div>
+                <div class="food-details">
+                    <div class="food-name">Chicken Noodle Soup</div>
+                    <div class="food-description">Comforting chicken noodle soup with a blend of vegetables.</div>
+
+                    <!-- Quantity Div -->
+                    <div class="quantity-container" id="quantity-chickenNoodleSoup" style="display: none;">
+                        <button onclick="changeQuantity('chickenNoodleSoup', -1)"><i class="material-icons">remove</i></button>
+                        <div class="quantity" id="quantity-value-chickenNoodleSoup">0</div>
+                        <button onclick="changeQuantity('chickenNoodleSoup', 1)"><i class="material-icons">add</i></button>
+                    </div>
+                </div>
+                <div class="food-review">
+                    <div class="review-rating">4.8</div>
+                    <div class="review-count">(90 Reviews)</div>
+                </div>
+            </div>
+
+
+        </div> <!-- Menu Items Close -->
+            <button id="submitOrderButton" onclick="submitOrder()" class="submit-button">Submit Order</button>
+    </div> <!-- Menu Items Container Close -->
+</div> <!-- Food Delivery Container Close -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Footer -->
+    <div id="footer" class="footer">
+        <p>&copy; 2024 Chunibo Food Delivery App. All rights reserved.</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

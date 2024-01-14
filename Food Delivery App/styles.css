@@ -1,0 +1,232 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    z-index: 2; /* Ensure the header is above the background */
+    background: rgba(0, 0, 0, 0.5); 
+}
+
+.header img {
+    width: 70px;
+    height: auto;
+}
+
+.header-links {
+    display: flex;
+}
+
+.header-link {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 10px;
+    padding-right: 25px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.header-link:hover {
+    background-color: #333;
+}
+
+.header-container {
+    height: 70vh;
+    background: url('images/background/background.jpg') center/cover;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-text {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+    z-index: 1; /* Ensure the text is above the background */
+}
+
+.header-text div {
+    background: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background for better readability */
+    padding: 10px;
+    border-radius: 8px; /* Optional: Add rounded corners to the background */
+}
+
+.random-text {
+    margin-top: 5px;
+    margin-bottom: 15px;
+
+    padding: 20px;
+    text-align: center;
+    background-color: #333333eb;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.01);
+}
+
+.random-text p {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+}
+
+.box {
+    margin-left: 10px;
+    margin-right: 10px;
+    
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.box:hover {
+    transform: scale(1.05);
+}
+
+.box a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    height: 100%;
+}
+
+@media (max-width: 800px) {
+    .container {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    }
+}
+.footer {
+    margin-top: 30px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+/* Your existing styles */
+
+/* Hamburger menu styles */
+.menu-btn {
+    display: none;
+    cursor: pointer;
+    z-index: 3; /* Ensure the menu button is above the background */
+    margin-right: 20px; /* Add space on the right side */
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    padding-top: 80px;
+    transition: 0.5s;
+    z-index: 2; /* Ensure the menu is above the background */
+}
+
+.menu a {
+    padding: 15px;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background-color: #555;
+}
+
+.menu-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 32px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.menu-close-btn span {
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+@media (max-width: 800px) {
+    .header-links {
+        display: none;
+    }
+@media only screen and (max-width: 767px) {
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+    }
+    
+
+    .menu-btn {
+        display: block;
+    }
+
+    .menu-btn.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-btn.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-btn.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .menu.active {
+        right: 0;
+    }
+}
+
+body {
+    user-select: none;
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    -webkit-user-select: none; /* Chrome, Safari, Opera */
+}
+body, html {
+    overflow-x: hidden;
+}

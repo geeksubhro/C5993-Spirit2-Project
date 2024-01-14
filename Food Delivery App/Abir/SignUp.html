@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp Form</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="Stylesheet" href="SignUp.css"/>
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1 class="h3">SignUp</h1>
+        </header>
+        <form>
+            <div class="form_wrapper">
+                <input id="username" type="text" class="form-control" required>
+                <label for="username">UserName</label>
+                <i class="material-icons">person</i>
+            </div>
+            <div class="form_wrapper">
+                <input id="email" type="text" class="form-control" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+                <label for="email">Email</label>
+                <i class="material-icons">email</i>
+            </div>
+            <div class="form_wrapper">
+                <input id="location" type="text" class="form-control" required>
+                <label for="location">Location</label>
+                <i class="material-icons">location</i>
+            </div>
+            <div class="form_wrapper">
+                <input id="password" type="password" class="form-control" required pattern=".{8,}">
+                <label for="password">Password (min 8 characters)</label>
+                <i class="material-icons">lock</i>
+            </div>
+            <div class="remember_box">
+                <div class="remember form-check">
+                    <input type="checkbox" id="termsCheckbox" class="form-check-input">
+                    <label for="termsCheckbox" class="form-check-label">I agree to the terms of services</label>
+                </div>
+                <button type="submit" class="btn btn-primary">SignUp</button>
+            </div>
+            <div class="signup-btn mt-3">
+                <hr>
+                <p class="fw-bold">OR</p>
+                <button type="button" class="btn btn-outline-primary mb-2">Login with Google</button>
+                <button type="button" class="btn btn-outline-primary mb-2">Login with Facebook</button>
+                <p class="text-white">Already have an account? <a href="/Abir/Login2.html" class="text-white">Login</a></p>
+            </div>
+        </form>
+
+        <!-- Toast containers -->
+        <div id="toast-username" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-body error-toast"></div>
+        </div>
+
+        <div id="toast-email" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-body error-toast"></div>
+        </div>
+
+        <div id="toast-location" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-body error-toast"></div>
+        </div>
+
+        <div id="toast-password" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-body error-toast"></div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="ist/js/bootstrap.bundle.min.js"></script>
+    <script src="/Abir/script.js"></script>
+    
+</body>
+
+</html>
